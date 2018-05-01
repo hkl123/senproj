@@ -1,0 +1,23 @@
+{% extends 'class/base.html' %}
+{% block page %}
+{%  load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'class/index.css' %}" />
+<h1 style="font-family: 'Fredoka One', cursive; color: #700FA8; margin-left: 30px">Store</h1>
+
+     <ul style="margin-left: 20%; margin-right: 10%;">
+     <h3><a href="makeitem" style="color: #700FA8">Add</a></h3>
+         {% for Item in object_list %}
+            <h3>
+                <li style="font-family: 'Fredoka One', cursive; color: #700FA8; ">
+
+        <!---            <a href="updateitem" style="font-family: 'Fredoka One', cursive; color: #700FA8"> --->
+                        {{ Item.name }} ~ Price: {{ Item.price }}
+        <!---            </a> --->
+
+                </li>
+            </h3>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

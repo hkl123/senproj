@@ -1,0 +1,20 @@
+{% extends 'class/baseIndex.html' %}
+{% block page %}
+{%  load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'class/index.css' %}" />
+
+
+    <!-- each href'd to a new template that calls database stuff -->
+    <h1 style="font-family: 'Fredoka One', cursive; color: #700FA8"; align="center">Welcome to {{ class.name }}!</h1>
+    <h4 style="font-family: 'Fredoka One', cursive; color: #700FA8"; align="center">Click an option below:</h4>
+    <div style="font-family: 'Fredoka One', cursive; color: #700FA8"; align="center">
+        <h3><a href="Assignments" style="color: #700FA8">Assignments</a></h3>
+        <h3><a href="studentlist" style="color: #700FA8">Student List</a></h3>
+        <h3><a href="Store" style="color: #700FA8">Store</a></h3>
+        <h3><a href="Calendar" style="color: #700FA8">Calendar</a></h3>
+        <h3><a href="updateclass" style="color: #700FA8">edit</a></h3>
+
+    </div>
+
+
+{% endblock %}

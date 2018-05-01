@@ -1,0 +1,39 @@
+{% extends 'class/baseIndex.html' %}
+{% block page %}
+
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+{% if object_list %}
+    <h1 style="text-align: center; font-family: 'Fredoka One', cursive; color: #700FA8">Your Current Classes:</h1>
+    <h4 style="text-align: center; font-family: 'Fredoka One', cursive; color: #700FA8">Pick a class for more options</h4>
+
+<div style="align: center;">
+    <ul style="margin-left: 20%; margin-right: 10%;">
+    <a href="class/home/add" style="font-family: 'Fredoka One', cursive; color: #700FA8">
+        <h3>Add Class</h3>
+    </a>
+        {% for Class in object_list %}
+            <h3>
+                <li style="font-family: 'Fredoka One', cursive; color: #700FA8; ">
+
+                    <a href="/class/{{ Class.id }}/" style="font-family: 'Fredoka One', cursive; color: #700FA8">
+                        {{ Class.name }}
+                    </a>
+
+                </li>
+            </h3>
+        {% endfor %}
+    </ul>
+    </div>
+{% else %}
+
+<h1>No Classes Found</h1>
+    <a href="class/home/add">
+        <h3>Add Class</h3>
+    </a>
+{% endif %}
+
+
+</body>
+
+{% endblock %}
